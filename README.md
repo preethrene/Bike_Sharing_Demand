@@ -129,17 +129,18 @@ Evaluation plots and metric comparisons are stored in the outputs folder.
 
 ```mermaid
 flowchart TD
-    U[User] --> UI[Streamlit Web Application]
+    U[User] --> UI[Streamlit Web App]
 
-    UI --> |User Inputs| FE[Feature Engineering]
-    FE --> SC[Data Scaling (StandardScaler)]
+    UI --> FE[Feature Engineering]
+    FE --> SC[Data Scaling]
 
-    SC --> MODEL[Trained ML Model\n(Random Forest Regressor)]
-    MODEL --> |Predicted Bike Demand| UI
+    SC --> MODEL[Random Forest Model]
+    MODEL --> UI
 
-    DATA[Historical Bike-Sharing Dataset] --> PREP[Data Preprocessing]
-    PREP --> TRAIN[Model Training & Evaluation]
+    DATA[Historical Bike Data] --> PREP[Data Preprocessing]
+    PREP --> TRAIN[Model Training]
     TRAIN --> MODEL
+
 ```
 
 ---
