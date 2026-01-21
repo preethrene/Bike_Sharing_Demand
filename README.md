@@ -14,24 +14,26 @@
 
 ## 📌 Overview
 
-**RideWise** is an end-to-end **machine learning project** that predicts **city bike-sharing demand** using historical bike usage data, weather conditions, and calendar-based urban indicators.
+**RideWise** is an end-to-end **machine learning–based bike-sharing demand prediction system**.  
+It forecasts the **number of bike rentals** using historical bike usage data, weather conditions, and calendar-based urban indicators.
 
-The project aims to help **urban planners and transit operators** make informed decisions related to:
-- Fleet management  
-- Station rebalancing  
-- Demand surge handling  
-- Infrastructure planning  
+The project helps:
+- Urban planners  
+- Bike-sharing operators  
+- City transportation authorities  
 
-It includes **data preprocessing**, **model training**, **performance evaluation**, and a **Streamlit-based interactive web application**.
+to make **data-driven decisions** for fleet management and infrastructure planning.
 
 ---
 
 ## 🎯 Project Statement
 
-The goal of this project is to build machine learning regression models to predict city bike-sharing demand.  
-The primary objectives are to forecast daily or hourly rental counts for a city’s bike-sharing system based on a combination of historical bike usage data, weather information, and details of city events or activities.
+The goal of this project is to build machine learning regression models to predict city bike-sharing demand.
 
-This project helps improve operational efficiency and planning accuracy.
+The primary objectives are to forecast daily or hourly rental counts for a city’s bike-sharing system based on:
+- Historical bike usage data  
+- Weather information  
+- City activity and calendar features  
 
 ---
 
@@ -40,31 +42,36 @@ This project helps improve operational efficiency and planning accuracy.
 ### 1️⃣ Predicting Bike-Sharing Demand
 
 **Description:**  
-Using historical usage records, weather conditions, and scheduled city events, the system predicts the number of bike rentals for a given day or hour.
+Predict the number of bike rentals for a given day or hour using weather conditions and temporal features.
 
-**Benefits:**
+**Applications:**
 - Fleet rebalancing  
 - Station stocking  
-- Demand surge anticipation  
-- Weather-aware planning  
+- Surge planning during events  
+- Weather-aware operations  
 
 ---
 
 ### 2️⃣ Assessing Impact of Features
 
 **Description:**  
-The trained models help understand how factors such as weather variations, city events, weekdays, holidays, and seasonal patterns affect bike demand.
+Analyze how different factors affect demand:
+- Temperature  
+- Humidity  
+- Windspeed  
+- Holidays  
+- Weekdays vs weekends  
 
-**Benefits:**
-- Ridership pattern analysis  
-- Infrastructure optimization  
-- Data-driven urban planning  
+**Applications:**
+- Ridership optimization  
+- Infrastructure planning  
+- Policy decision support  
 
 ---
 
 ## 📊 Dataset Description
 
-The dataset contains historical bike-sharing records with the following attributes:
+The dataset consists of historical bike-sharing records with the following attributes:
 
 ### Temporal Features
 - Year  
@@ -85,27 +92,25 @@ The dataset contains historical bike-sharing records with the following attribut
 
 ---
 
-## ⚙️ Data Preprocessing
+## ⚙️ Data Preprocessing & Feature Engineering
 
 - Handling missing values  
-- Encoding categorical variables  
-- Feature scaling using StandardScaler  
-- Creation of derived features (is_weekend)  
+- Encoding categorical features  
+- Feature scaling using **StandardScaler**  
+- Creation of derived features (`is_weekend`)  
 - Dataset normalization  
 
 ---
 
 ## 🤖 Machine Learning Models
 
-The following regression models were implemented and compared:
+The following regression models were implemented and evaluated:
 
 - Linear Regression  
 - Ridge Regression  
 - Lasso Regression  
 - Decision Tree Regressor  
-- Random Forest Regressor  
-
-✅ **Random Forest Regressor** performed best and was selected for deployment.
+- **Random Forest Regressor (Best Model)**  
 
 ---
 
@@ -116,18 +121,37 @@ Models were evaluated using:
 - Root Mean Squared Error (RMSE)  
 - R² Score  
 
-Evaluation results are stored in CSV files and visualization plots.
+Evaluation plots and metric comparisons are stored in the outputs folder.
 
 ---
 
-## 🎨 Streamlit Application
+## 🧠 System Architecture
 
-The project includes a Streamlit web app that allows users to:
+```mermaid
+flowchart TD
+    U[User] --> UI[Streamlit Web Application]
+
+    UI --> |User Inputs| FE[Feature Engineering]
+    FE --> SC[Data Scaling (StandardScaler)]
+
+    SC --> MODEL[Trained ML Model\n(Random Forest Regressor)]
+    MODEL --> |Predicted Bike Demand| UI
+
+    DATA[Historical Bike-Sharing Dataset] --> PREP[Data Preprocessing]
+    PREP --> TRAIN[Model Training & Evaluation]
+    TRAIN --> MODEL
+```
+
+---
+
+## 🎨 Streamlit Web Application
+
+The project includes a **Streamlit-based interactive web app** that allows users to:
 - Enter weather and calendar conditions  
 - View input summaries  
-- Predict bike rental demand instantly  
+- Instantly predict bike-sharing demand  
 
-The app uses pre-trained models saved as `.pkl` files.
+The app loads pre-trained models saved as `.pkl` files.
 
 ---
 
@@ -136,6 +160,8 @@ The app uses pre-trained models saved as `.pkl` files.
 | Home Page | Input Features | Prediction Output |
 |---------|----------------|------------------|
 | ![Home](screenshots/home.png) | ![Inputs](screenshots/input_features.png) | ![Prediction](screenshots/prediction_output.png) |
+
+> 📌 Create a folder named `screenshots/` in the repo and add the images with the above names.
 
 ---
 
