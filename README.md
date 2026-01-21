@@ -135,7 +135,7 @@ The app uses pre-trained models saved as `.pkl` files.
 
 | Home Page | Input Features | Prediction Output |
 |---------|----------------|------------------|
-| (Add Screenshot) | (Add Screenshot) | (Add Screenshot) |
+| ![Home](screenshots/home.png) | ![Inputs](screenshots/input_features.png) | ![Prediction](screenshots/prediction_output.png) |
 
 ---
 
