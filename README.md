@@ -170,8 +170,8 @@ The app loads pre-trained models saved as `.pkl` files.
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/preethrene/RideWise-Predicting-Bike-sharing-Demand.git
-cd RideWise-Predicting-Bike-sharing-Demand
+git clone https://github.com/preethrene/Bike_Sharing_Demand.git
+cd Bike_Sharing_Demand
 ```
 
 ### 2️⃣ Install Dependencies
